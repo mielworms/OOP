@@ -1,0 +1,65 @@
+class Person:
+    def __init__(self, name, address):
+        self.__name = name
+        self.__address = address
+
+    def getname(self):
+        return self.__name
+
+    def getaddress(self):
+        return self.__address
+
+    def setsddress(self, address):
+        self.__address = address
+
+    def tostring(self):
+        return {self.__name}({self.__address})
+
+
+class Student(Person):
+    def __init__(self, name, address, numCourses=0, courses=[], grades=[]):
+        super().__init__(name, address)
+        self.__numcourses = numcourses
+        self.__courses = courses
+        self.__grades = grades
+
+    def tostring(self):
+        return "Student:" {self.__name}({self.__address})
+        #^this has an error in my file
+
+    def addcoursegrade(self, course, grade):
+        if course not in self.__courses:
+            self.__courses.append(course)
+            self.__numcourses += 1
+        self.__grades.append(grade)
+
+    def printgrades(self):
+        print(self.__grades)
+
+    def getaveragegrade(self):
+        return sum(self.__grades) / len(self.__grades)
+
+
+class Teacher(Person):
+    def __init__(self, name, address, numcourses=0, courses=[]):
+        super().__init__(name, address)
+        self.__numCourses = numCourses
+        self.__courses = courses
+
+    def tostring(self):
+        return "Teacher:" {self.__name}({self.__address})
+
+    def addcourse(self, course):
+        if course in self.__courses:
+            return False
+        else:
+            self.__courses.append(course)
+            self.__numcourses += 1
+
+    def removecourse(self, course):
+        if course not in self.__courses:
+            return False
+        else:
+            self.__courses.remove(course)
+            self.__numcourses -= 1
+
