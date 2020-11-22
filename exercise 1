@@ -1,0 +1,48 @@
+from math import pi 
+
+class Circle:
+
+    def __init__(self, radius = 1.0, colour = "red"
+    #^this seems to have an error i can't fix
+    self.radius = radius
+    #^this one too, it says invalid syntax
+    self.colour = color 
+
+    def getradius(self):
+        return self.radius = radius 
+    
+    def setradius(self,radius):
+        self.radius = radius  
+
+    def getcolor(self):
+        return self.color
+
+    def setcolor(self, color):
+        self.color = color 
+
+    def __str__(self):
+        return ("Radius of the circle is " + int(self.getradius()) + "and" + "the color is " + int(self.getcolor()) 
+   
+    def getarea(self)
+        return (pi**2 * self.getradius())
+
+        
+class Cylinder(Circle):
+
+    def __init__(self, height = 1.0, color = "red"):
+        self.height = height 
+    
+    def getheight(self):
+        return self.height
+
+    def setheight(self):
+        self.height = height 
+    
+    def __str__(self):
+        return ("Radius of the cylinder is" + int(self.getradius()) + ", the height is" + int(self.getheight()) + "and the volume of the cylinder is" + str(self.getvolume())
+
+    def getvolume(self):
+        return (pi *2 * self.getheight() * self.getradius()
+
+    circle = circle()
+    cylinder = cylinder()
